@@ -1,0 +1,84 @@
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-bases {
+  display: inline-flex; /* 👈 CLAVE */
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 14px 32px;
+
+  background: linear-gradient(135deg, #e63946, #ff6b6b);
+  background-size: 200% 200%;
+
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border-radius: 50px;
+  border: none;
+
+  box-shadow: 0 6px 15px rgba(230, 57, 70, 0.35);
+
+  cursor: pointer;
+
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-position 0.4s ease;
+
+  margin: 0 auto;
+}
+
+/* Ícono */
+.btn-bases .icon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+
+  transition: transform 0.3s ease;
+}
+
+/* Hover principal */
+.btn-bases:hover {
+  background-position: right center;
+  transform: scale(1.07);
+
+  box-shadow: 0 10px 25px rgba(230, 57, 70, 0.6);
+}
+
+/* Movimiento del ícono */
+.btn-bases:hover .icon {
+  transform: translateX(5px);
+}
+
+/* Click */
+.btn-bases:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+}
+
+/* Mobile - layout vertical */
+@media (max-width: 480px) {
+  .btn-bases {
+    flex-direction: column; /* icono arriba, texto abajo */
+    gap: 6px;
+
+    font-size: 14px;
+    padding: 14px 22px;
+
+    text-align: center;
+  }
+
+  .btn-bases .icon {
+    font-size: 28px; /* icono más grande */
+    justify-content: center;
+  }
+}

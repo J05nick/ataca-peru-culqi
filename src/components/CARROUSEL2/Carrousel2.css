@@ -1,0 +1,81 @@
+.carrusel2 {
+  width: 100%;
+  max-width: 1200px;
+  padding: 60px 0;
+  margin: 0 auto;
+}
+
+/* Tarjeta cuadrada */
+.slide-card {
+  aspect-ratio: 1 / 1; /* 👈 cuadrado perfecto */
+  width: 100%;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+  background: #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagen */
+.slide-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* no se deforma */
+  transition: transform 0.4s ease;
+}
+
+/* Hover */
+.slide-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Contenedor general */
+.carrusel2-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Título moderno */
+.carrusel2-title {
+  text-align: center;
+
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  margin-bottom: 0px;
+
+  color: #666;
+
+  position: relative;
+  display: inline-block;
+}
+
+/* Línea decorativa debajo */
+.carrusel2-title::after {
+  content: "";
+  display: block;
+
+  width: 70px;
+  height: 4px;
+
+  background: linear-gradient(90deg, #e63946, #ff6b6b);
+
+  margin: 12px auto 0;
+
+  border-radius: 2px;
+}
+
+.carrusel2 .swiper-pagination-bullet-active {
+  background: #e63946;
+  transform: scale(1.4);
+  transition: all 0.3s ease;
+}

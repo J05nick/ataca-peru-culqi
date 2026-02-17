@@ -1,0 +1,55 @@
+.sponsors {
+  background-color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  overflow: hidden;
+}
+
+.sponsors h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #315177;
+}
+
+.sponsor-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.sponsor-track {
+  display: flex;
+  width: max-content; /* ancho dinámico según cantidad de logos */
+  animation: scroll 120s linear infinite;
+}
+
+.sponsor-track img {
+  height: 60px;
+  margin: 0 2rem;
+  filter: grayscale(100%);
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.sponsor-track img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+
+/* Animación continua */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); } /* recorre la mitad del track */
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1024px) {
+  .sponsor-track img {
+    height: 90px; /* logos más grandes en escritorio */
+  }
+  .sponsor-track:hover {
+  animation-play-state: paused;
+}
+}
+.sponsor-track:hover {
+  animation-play-state: paused;
+}

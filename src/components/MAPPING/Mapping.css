@@ -1,0 +1,50 @@
+/* Mapping.css */
+
+.route-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+}
+
+/* Título */
+.route-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Contenedor del mapa */
+.route-map {
+  width: 100%;
+  height: 450px;
+
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #ff6b6b;
+}
+
+/* Iframe */
+.route-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .route-map {
+    height: 300px;
+  }
+
+  .route-title {
+    font-size: 22px;
+  }
+}

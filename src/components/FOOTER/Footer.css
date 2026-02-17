@@ -1,0 +1,68 @@
+.footer {
+  background-color: #315177; /* color principal */
+  color: #fff;
+  font-family: "Segoe UI", sans-serif;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+/* Parte superior */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 1rem;
+
+}
+
+.footer-logo .logo-img {
+  width: 200px;       /* respeta el ancho original */
+  height: 130px;      /* respeta el alto original */
+  max-width: 100%;   /* opcional: evita que se desborde del contenedor */
+  margin-bottom: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+
+
+.footer-social a {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+  color: #ffd700;
+}
+
+/* Línea divisoria */
+.footer-divider {
+  border-top: 1px solid #fff;
+  opacity: 0.7;
+  width: 90%;       /* controla el largo de la línea */
+  margin: 1rem auto; /* centra la línea horizontalmente */
+}
+
+
+/* Parte inferior */
+.footer-bottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.footer-column h4 {
+  margin-bottom: 0.5rem;
+  color: #fff; /* títulos en dorado */
+}
+
+.footer-column p {
+  margin: 0.3rem 0;
+  opacity: 0.9;
+}

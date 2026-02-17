@@ -1,0 +1,115 @@
+
+.event-hero {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.event-hero-header {
+  display: flex;
+  align-items: center;   /* alinea verticalmente título e imagen */
+  justify-content: center; /* centra horizontalmente */
+  gap: 20px;             /* espacio entre título e imagen */
+  margin-bottom: 20px;
+}
+
+
+.event-hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.event-hero-image {
+  width: 1200px;        /* ajusta tamaño según tu diseño */
+  height: auto;
+  /*border-radius: 50%;   */ /* opcional: circular */
+  
+}
+
+
+.event-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* hace que el video cubra todo */
+  z-index: 0;
+}
+
+.event-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+  z-index: 1;
+}
+
+.event-hero-content {
+  position: relative;
+  z-index: 2; /* encima del video y overlay */
+  text-align: center;
+  color: #fff;
+  max-width: 900px;
+  padding: 2rem;        /* 🔑 más espacio interno */
+  margin-bottom: 40px;  /* 🔑 separa el contenido del borde inferior */
+
+}
+/* Responsivo: en móviles se apilan */
+@media (max-width: 768px) {
+  .event-hero-header {
+    flex-direction: column;
+  }
+
+  .event-hero-image {
+    width: 300px;      /* imagen más pequeña en móviles */
+    margin-top: 10px;
+  }
+
+  .event-hero-title {
+    font-size: 2rem;   /* título más pequeño en móviles */
+  }
+
+  .event-hero-details {
+    grid-template-columns: 1fr; /* 🔑 una sola columna en móviles */
+  }
+
+}
+.event-hero-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+.event-detail-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.event-detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+}
+
+.event-detail-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #FF4151; /* 🔑 color unificado */
+}
+
+.event-detail-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.event-detail-value {
+  font-size: 0.95rem;
+}
