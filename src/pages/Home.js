@@ -11,7 +11,7 @@ export default function Home() {
       <Carrousel />
       <Countdown 
         targetDate="2026-03-29T09:00:00" 
-        titulo="LSL-MTB 2026 PRIMERA SERIE" 
+        titulo="ATACA PERU - CULQUI TEST" 
         descripcion="Chiguata Epic - 29 de marzo 2026"
        />
       <Events />
