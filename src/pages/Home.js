@@ -18,16 +18,6 @@ export default function Home() {
       <Events />
       <Sponsors />
 
-      <CulqiButton 
-        amount={600} // Monto en centavos (ejemplo: 600 = S/ 6.00)
-        buttonText="Pagar"
-        onResult={(result) => {
-          if (result.success) {
-            console.log("Pago exitoso:", result);
-          }
-        }}
-      />
-
     </div>
   );
 
