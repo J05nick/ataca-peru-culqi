@@ -16,9 +16,9 @@ import { useState } from "react";
 import Modal from '../components/MODAL/Modal';
 import emailjs from '@emailjs/browser';
 
-export default function Chiguata() {
+export default function TRAIL_DEL_PESCADOR() {
   /*Estado para controlar el grupo seleccionado en el formulario de inscripción */
-  const [grupo, setGrupo] = useState("");
+  const [grupo, setGrupo] = useState("ALPHA");
 
   /*Estado pasos del formulario de inscripción */
   const [step, setStep] = useState(1);
@@ -31,7 +31,7 @@ export default function Chiguata() {
   const [telefono, setTelefono] = useState("");
   const [genero, setGenero] = useState("");
   const [fechaNacimiento, setFechaNacimiento] = useState("");
-  const [talla, setTalla] = useState("");
+  const [talla, setTalla] = useState("M");
   const [otroEquipo, setOtroEquipo] = useState("");
   const [fotoBienvenida, setFotoBienvenida] = useState(null);
 
@@ -61,9 +61,7 @@ export default function Chiguata() {
           grupo === "otro"
           ? otroEquipo
           : grupo,
-
         talla,
-
       };
 
       emailjs.send(
@@ -74,23 +72,15 @@ export default function Chiguata() {
       )
 
       .then(() => {
-
         alert("Tu inscripción ha sido enviada con éxito");
-
         setModalOpen(false);
-
         window.location.reload();
-
       })
 
       .catch((error) => {
-
         setEnviando(false);
-
         console.log(error);
-
         alert("Error al enviar correo");
-
       });
   };
 
@@ -100,17 +90,9 @@ export default function Chiguata() {
   /*Items de tipo de inscripción*/
   const items_inscripcion = [
     {
-        img: "/images/LSL_MTB/2fechas.jpg",
-        title: "Inscripción paquete completo",
-        desc: "¡Asegura tu lugar en el Chiguata Epic 2026! Inscríbete ahora y reserva todas las fechas",
-        link: "https://atacaperu.com/inscripcion-paquete-completo-lsl-mtb-2026/",
-        btnText: "Inscribirme",
-    },
-    {
-        img: "/images/LSL_MTB/1fecha.jpg",  
-        title: "Inscripción por fecha",
-        desc: "Inscríbite en la primera FECHA: CHIGUATA EPIC 2026",
-        link: "https://atacaperu.com/inscripcion-chiguata-epic-2026/",
+        img: "https://atacaperu.com/wp-content/uploads/2026/05/667365336_122121142869170678_2140071024310354874_n.avif",
+        title: "¡Inscríbite ahora!",
+        desc: "¡Corre donde el mar y la arena desafían tus límites! Prepárate para vivir una experiencia única entre el mar, la arena y la fuerza del norte ",
         btnText: "Inscribirme",
     }
   ]
@@ -150,15 +132,14 @@ export default function Chiguata() {
 
   /*Carrusel 2 imagenes*/
   const images_carrousel2=[
-      "/images/Chiguata_medalla.jpg",
-      "/images/Chiguata_certificado.jpg",
-      "/images/Chiguata_posavasos.jpg",
-      "/images/Fruta_hidratacion.jpg",
+      "https://atacaperu.com/wp-content/uploads/2026/05/701313432_1828615631879010_3829468554739370638_n.avif",
+      "https://atacaperu.com/wp-content/uploads/2026/05/700208264_1827702155303691_1205507908146195870_n.avif",
+      "https://atacaperu.com/wp-content/uploads/2026/05/697177072_1826755695398337_2843395840613015311_n.avif",
   ]
 
   /*Detalles del hero section*/
   const detalles_hero = [
-      { icon: <FaMapMarkerAlt />, label: "Lugar", value: "Chiguata, Arequipa" },
+      { icon: <FaMapMarkerAlt />, label: "Lugar", value: "Playa los Órganos, Piura, Perú" },
       { icon: <FaClock />, label: "Hora", value: "08:00 AM" },
       { icon: <FaMedal />, label: "Premios", value: "Reconocimientos a ganadores" },
   ];
@@ -172,7 +153,7 @@ export default function Chiguata() {
 
   const detalles = [
     { label: "Fecha", value: "29 de marzo 2026" },
-    { label: "Lugar", value: "Chiguata, Arequipa, Perú" },
+    { label: "Lugar", value: "Playa los Órganos, Piura, Perú" },
     { label: "Concentración", value: "07:30 AM" },
     { label: "Partida", value: "08:00 AM" }
   ];
@@ -203,18 +184,18 @@ export default function Chiguata() {
   return (
      <>
       <HeroVideo
-        descripcion="El evento de ciclismo de montaña más esperado del año en Arequipa. ¡Prepárate para vivir la emoción del Chiguata Epic 2026!"
-        video="https://atacaperu.com/wp-content/uploads/2026/02/videoplayback.mp4"
-        imagen="/images/LSL MTB CHIGUATA.png"   // 🔑 nueva prop para mostrar al costado del título
+        descripcion="El evento de trail running más esperado del año llega a la costa norte de Perú. Prepárate para vivir una experiencia única entre el mar, la arena y la fuerza del norte. ¡Corre donde el mar y la arena desafían tus límites!"
+        video="https://atacaperu.com/wp-content/uploads/2026/05/YTDown_YouTube_Correr-por-la-playa-Costa-Runner-No-Copy_Media_bSxZn9gOTlA_001_720p.mp4"
+        imagen="/images/LSL MTB CHIGUATA.png"   
         detalles={detalles_hero}
       />     
 
       <br />
 
       <Countdown
-        targetDate="2026-03-29T09:00:00"
-        titulo="CUENTA REGRESIVA PARA CHIGUATA EPIC 2026"
-        descripcion="¡Prepárate para la competencia más emocionante de la temporada!"
+        targetDate="2026-06-28T09:00:00"
+        titulo="CUENTA REGRESIVA PARA TRAIL DEL PESCADOR 10K"
+        descripcion="Prepárate para vivir una experiencia única entre el mar, la arena y la fuerza del norte"
       />
 
       <Responsib titulo="INSCRIPCIONES" items={items_inscripcion} onButtonClick={abrirModal}/>
@@ -225,25 +206,19 @@ export default function Chiguata() {
       >
         {
           enviando && (
-
             <div className="loading-overlay">
 
               <div className="loading-box">
-
                 <div className="spinner"></div>
-
                 <p>
                   Enviando inscripción...
                 </p>
-
               </div>
-
             </div>
-
           )
         }
-        <div className="modal-line"></div>
 
+        <div className="modal-line"></div>
         <h1>
           {
             step===1
@@ -255,7 +230,6 @@ export default function Chiguata() {
           }
         </h1>
         { step === 1 && (
-
           <form className="inscripcion-form"
             onSubmit={(e) => {
             e.preventDefault();
@@ -554,14 +528,14 @@ export default function Chiguata() {
 
 
       <Categories
-        titulo="El camino es TUYO"
+        titulo="Más fuerte que el cansancio: Trail del Pescador 10K"
         descripcion="Una ruta exigente, paisajes únicos y la mejor experiencia del ciclismo en Arequipa 🌄🔥
                     Vive el ciclismo donde el camino es tuyo."
-        imagen="https://atacaperu.com/wp-content/uploads/2023/04/portada-3.jpg"
+        imagen="https://atacaperu.com/wp-content/uploads/2026/05/WhatsApp-Image-2026-05-05-at-11.34.23-AM.avif"
         categorias={categorias}
         items={items}
       />
-      <ButtonBases url={"https://atacaperu.com/wp-content/uploads/2026/01/BASES-LSL-MTB-2026.pdf"}/>
+      <ButtonBases url={"https://atacaperu.com/wp-content/uploads/2026/05/BASES-GENERALES-TRAIL-DEL-PESCADOR.pdf"}/>
       <br />
       <br />
       <br />
